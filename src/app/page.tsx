@@ -73,12 +73,13 @@ const Content = () => {
       </h2>
       <h2 className="text-xl">{"Step 3: Upload the file below"}</h2>
       <div className="text-gray-200 font-light italic">
-        {"(Your data never leaves your computer - source code is "}
+        {"(Your data never leaves your computer - "}
         <a
           href="https:/github.com/t3dotgg/70check"
+          target="_blank"
           className="text-blue-400 underline"
         >
-          {"here"}
+          {"source code here"}
         </a>
         {")"}
       </div>
@@ -99,6 +100,7 @@ export default function Home() {
         {"A quick way to check if you're eligible for "}
         <a
           href="https://blog.twitch.tv/en/2023/06/15/introducing-the-partner-plus-program/"
+          target="_blank"
           className="text-blue-400 underline"
         >
           {'Twitch\'s new 70/30 split "Partner Plus" Program'}
@@ -108,6 +110,7 @@ export default function Home() {
           {"(Quickly made by "}
           <a
             href="https://twitter.com/t3dotgg"
+            target="_blank"
             className="text-blue-400 underline"
           >
             {"Theo"}
