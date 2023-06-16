@@ -77,6 +77,16 @@ const Content = () => {
           "Step 4: Click `Download my subscribers list` (on the right under Subscribers)"
         }
       </h2>
+      <div className="text-gray-200 font-light italic">
+        {"(Your data never leaves your computer - source code is "}
+        <a
+          href="https:/github.com/t3dotgg/70check"
+          className="text-blue-400 underline"
+        >
+          {"here"}
+        </a>
+        {")"}
+      </div>
 
       <div className="p-4" />
       <UploadCSVButton onUpload={setCsv} />
@@ -99,14 +109,16 @@ export default function Home() {
           {'Twitch\'s new 70/30 split "Partner Plus" Program'}
         </a>
         <br />
-        {"(Built By "}
-        <a
-          href="https://twitter.com/t3dotgg"
-          className="text-blue-400 underline"
-        >
-          {"Theo"}
-        </a>
-        {")"}
+        <div className="text-gray-200 font-light italic">
+          {"(Quickly made by "}
+          <a
+            href="https://twitter.com/t3dotgg"
+            className="text-blue-400 underline"
+          >
+            {"Theo"}
+          </a>
+          {")"}
+        </div>
       </div>
       <div className="p-4" />
       <Content />
