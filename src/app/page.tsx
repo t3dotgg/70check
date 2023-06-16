@@ -1,16 +1,26 @@
 "use client";
 import { useMemo, useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../../components/ui/card";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { Label } from "../../components/ui/label";
 
 const UploadCSVButton = (props: { onUpload: (csv: string[][]) => void }) => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <label
-        htmlFor="upload-csv"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Upload <code>subscriber-list.csv</code>
-      </label>
-      <input
+      <Button>
+        <Label htmlFor="upload-csv" className="hover:cursor-pointer" >
+          Upload <code>subscriber-list.csv</code>
+        </Label>
+      </Button>
+      <Input
         id="upload-csv"
         type="file"
         className="hidden"
@@ -91,35 +101,45 @@ const Content = () => {
 };
 
 export default function Home() {
+
   return (
-    <main className="flex flex-col max-w-5xl p-10 md:py-24 mx-auto">
+    <main className="container flex items-center justify-center min-h-screen font-sans">
       <div>
-        <h1 className="text-2xl font-bold">70Check</h1>
-      </div>
-      <div>
-        {"A quick way to check if you're eligible for "}
-        <a
-          href="https://blog.twitch.tv/en/2023/06/15/introducing-the-partner-plus-program/"
+        <Card className="max-[550px]">
+          <CardHeader>
+            <CardTitle className="text-4xl text-center">70Check</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="mb-4 text-center">
+              {"A quick way to check if you're eligible for "}
+              <a
+                href="https://blog.twitch.tv/en/2023/06/15/introducing-the-partner-plus-program/"
           target="_blank"
-          className="text-blue-400 underline"
-        >
-          {'Twitch\'s new 70/30 split "Partner Plus" Program'}
-        </a>
-        <br />
+                className="text-blue-400 underline"
+              >
+                {'Twitch\'s new 70/30 split "Partner Plus" Program'}
+              </a>
+              <br />
         <div className="text-gray-200 font-light italic">
-          {"(Quickly made by "}
-          <a
-            href="https://twitter.com/t3dotgg"
+                {"(Quickly made by "}
+                <a
+                  href="https://twitter.com/t3dotgg"
             target="_blank"
-            className="text-blue-400 underline"
-          >
-            {"Theo"}
-          </a>
-          {")"}
-        </div>
+                  className="text-blue-400 underline"
+                >
+                  {"Theo"}
+                </a>
+                {")"}
+              </div>
       </div>
-      <div className="p-4" />
-      <Content />
+            <Content />
+          </CardContent>
+          <CardFooter>
+
+          </CardFooter>
+        </Card>
+
+      </div>
     </main>
   );
 }

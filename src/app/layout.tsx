@@ -3,7 +3,11 @@ import { Inter } from "next/font/google";
 
 import PlausibleProvider from "next-plausible";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata = {
   title: "70Check",
@@ -16,11 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning className="dark">
       <head>
         <PlausibleProvider domain="70.t3.gg" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
