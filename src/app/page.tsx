@@ -57,26 +57,20 @@ const Content = () => {
   return (
     <div>
       <h2 className="text-xl">
-        Step 1: Go to{" "}
+        Step 1: Go to the{" "}
         <a
-          href="https://dashboard.twitch.tv"
+          href="https://dashboard.twitch.tv/analytics/revenue-earnings/subscriptions"
           className="text-blue-400 underline"
         >
-          dashboard.twitch.tv
+          subscriptions revenue page in the Twitch dashboard
         </a>
       </h2>
-
-      <h2 className="text-xl">{"Step 2: Go to Analytics -> Earnings"}</h2>
-
-      <h2 className="text-xl">
-        {"Step 3: Find the `Subscribers` widget and click `View details`"}
-      </h2>
-
       <h2 className="text-xl">
         {
-          "Step 4: Click `Download my subscribers list` (on the right under Subscribers)"
+          "Step 2: Click `Download my subscribers list` (on the right under Subscribers)"
         }
       </h2>
+      <h2 className="text-xl">{"Step 3: Upload the file below"}</h2>
       <div className="text-gray-200 font-light italic">
         {"(Your data never leaves your computer - source code is "}
         <a
