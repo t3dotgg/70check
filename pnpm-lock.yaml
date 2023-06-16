@@ -26,6 +26,9 @@ dependencies:
   next:
     specifier: 13.4.6
     version: 13.4.6(react-dom@18.2.0)(react@18.2.0)
+  next-plausible:
+    specifier: ^3.7.2
+    version: 3.7.2(next@13.4.6)(react-dom@18.2.0)(react@18.2.0)
   postcss:
     specifier: 8.4.24
     version: 8.4.24
@@ -1799,6 +1802,18 @@ packages:
 
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+    dev: false
+
+  /next-plausible@3.7.2(next@13.4.6)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-9PqFiVtD1kZO5gHFYTcgilHhg2WhMzD6I4NK/RUh9DGavD1N11IhNAvyGLFmvB3f4FtHC9IoAsauYDtQBt+riA==}
+    peerDependencies:
+      next: ^11.1.0 || ^12.0.0 || ^13.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      next: 13.4.6(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /next@13.4.6(react-dom@18.2.0)(react@18.2.0):
