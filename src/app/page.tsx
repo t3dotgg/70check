@@ -60,6 +60,7 @@ const Content = () => {
         Step 1: Go to the{" "}
         <a
           href="https://dashboard.twitch.tv/analytics/revenue-earnings/subscriptions"
+          target="_blank"
           className="text-blue-400 underline"
         >
           subscriptions revenue page in the Twitch dashboard
