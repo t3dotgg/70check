@@ -86,7 +86,7 @@ const Content = () => {
 
 export default function Home() {
   return (
-    <main className="flex flex-col p-24">
+    <main className="flex flex-col max-w-5xl p-10 md:py-24 mx-auto">
       <div>
         <h1 className="text-2xl font-bold">70Check</h1>
       </div>
