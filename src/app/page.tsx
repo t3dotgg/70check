@@ -3,8 +3,6 @@ import { useMemo, useState } from "react";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
@@ -134,9 +132,6 @@ export default function Home() {
       </div>
             <Content />
           </CardContent>
-          <CardFooter>
-
-          </CardFooter>
         </Card>
 
       </div>
