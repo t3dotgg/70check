@@ -8,7 +8,7 @@ const UploadCSVButton = (props: { onUpload: (csv: string[][]) => void }) => {
         htmlFor="upload-csv"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
-        Upload CSV
+        Upload <code>subscriber-list.csv</code>
       </label>
       <input
         id="upload-csv"
@@ -44,11 +44,11 @@ const Content = () => {
   if (csv) {
     if (calculation > 350)
       return (
-        <div>{`You're eligible! You have ${calculation} recurring subs`}</div>
+        <div className="text-xl">{`You're eligible! You have ${calculation} recurring subs`}</div>
       );
 
     return (
-      <div>{`You're not eligible :( you have ${calculation} recurring subs, which is ${
+      <div className="text-xl">{`You're not eligible :( you have ${calculation} recurring subs, which is ${
         350 - calculation
       } away`}</div>
     );
@@ -78,6 +78,7 @@ const Content = () => {
         }
       </h2>
 
+      <div className="p-4" />
       <UploadCSVButton onUpload={setCsv} />
     </div>
   );
@@ -85,7 +86,29 @@ const Content = () => {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col p-24">
+      <div>
+        <h1 className="text-2xl font-bold">70Check</h1>
+      </div>
+      <div>
+        {"A quick way to check if you're eligible for "}
+        <a
+          href="https://blog.twitch.tv/en/2023/06/15/introducing-the-partner-plus-program/"
+          className="text-blue-400 underline"
+        >
+          {'Twitch\'s new 70/30 split "Partner Plus" Program'}
+        </a>
+        <br />
+        {"(Built By "}
+        <a
+          href="https://twitter.com/t3dotgg"
+          className="text-blue-400 underline"
+        >
+          {"Theo"}
+        </a>
+        {")"}
+      </div>
+      <div className="p-4" />
       <Content />
     </main>
   );
