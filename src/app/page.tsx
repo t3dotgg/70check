@@ -75,7 +75,7 @@ const Content = () => {
       <div className="text-gray-200 font-light italic">
         {"(Your data never leaves your computer - "}
         <a
-          href="https:/github.com/t3dotgg/70check"
+          href="https://github.com/t3dotgg/70check"
           target="_blank"
           className="text-blue-400 underline"
         >
