@@ -1,5 +1,5 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Card,
   CardContent,
@@ -14,7 +14,7 @@ const UploadCSVButton = (props: { onUpload: (csv: string[][]) => void }) => {
   return (
     <div className="flex flex-col items-center justify-center">
       <Button>
-        <Label htmlFor="upload-csv" className="hover:cursor-pointer" >
+        <Label htmlFor="upload-csv" className="hover:cursor-pointer">
           Upload <code>subscriber-list.csv</code>
         </Label>
       </Button>
@@ -52,35 +52,40 @@ const Content = () => {
   if (csv) {
     if (calculation > 350)
       return (
-        <div className="text-xl">{`You're eligible! You have ${calculation} recurring subs`}</div>
+        <div className="text-xl text-center">
+        {`You're eligible! 🥳 `} <br />
+        {`you have ${calculation} recurring subs`} <br />
+        </div>
       );
 
     return (
-      <div className="text-xl">{`You're not eligible :( you have ${calculation} recurring subs, which is ${
-        350 - calculation
-      } away`}</div>
+      <div className="text-xl text-center">
+        {`You're not eligible 😔 `} <br />
+        {`You have ${calculation} recurring subs,`} <br />
+        {` which is ${
+          350 - calculation
+        } away`}
+      </div>
     );
   }
 
   return (
     <div>
-      <h2 className="text-xl">
-        Step 1: Go to the{" "}
-        <a
-          href="https://dashboard.twitch.tv/analytics/revenue-earnings/subscriptions"
-          target="_blank"
-          className="text-blue-400 underline"
-        >
-          subscriptions revenue page in the Twitch dashboard
-        </a>
-      </h2>
-      <h2 className="text-xl">
-        {
-          "Step 2: Click `Download my subscribers list` (on the right under Subscribers)"
-        }
-      </h2>
-      <h2 className="text-xl">{"Step 3: Upload the file below"}</h2>
-      <div className="text-gray-200 font-light italic">
+      <ol className="list-decimal list-inside mb-4">
+        <li>
+          {"Download the CSV from "}
+          <a
+            href="https://dashboard.twitch.tv/analytics/revenue-earnings/subscriptions"
+            target="_blank"
+            className="text-blue-400 underline"
+          >
+            {"the Twitch dashboard"}
+          </a>
+        </li>
+        <li>{"Upload the CSV below"}</li>
+        <li>{"See if you're eligible!"}</li>
+      </ol>
+      <div className="text-gray-200 font-light italic text-xs">
         {"(Your data never leaves your computer - "}
         <a
           href="https://github.com/t3dotgg/70check"
@@ -99,41 +104,42 @@ const Content = () => {
 };
 
 export default function Home() {
-
   return (
-    <main className="container flex items-center justify-center min-h-screen font-sans">
+    <main className="container flex items-center justify-center min-h-screen font-sans max-w-[550px]">
       <div>
-        <Card className="max-[550px]">
-          <CardHeader>
-            <CardTitle className="text-4xl text-center">70Check</CardTitle>
-          </CardHeader>
-          <CardContent>
+        <div>
+          <div className="flex flex-col items-center justify-center mb-4">
+            <h1 className="text-5xl font-bold mb-4">70Check</h1>
             <div className="mb-4 text-center">
               {"A quick way to check if you're eligible for "}
+              <br />
               <a
                 href="https://blog.twitch.tv/en/2023/06/15/introducing-the-partner-plus-program/"
-          target="_blank"
+                target="_blank"
                 className="text-blue-400 underline"
               >
                 {'Twitch\'s new 70/30 split "Partner Plus" Program'}
               </a>
               <br />
-        <div className="text-gray-200 font-light italic">
+              <div className="text-gray-200 font-light italic">
                 {"(Quickly made by "}
                 <a
                   href="https://twitter.com/t3dotgg"
-            target="_blank"
+                  target="_blank"
                   className="text-blue-400 underline"
                 >
                   {"Theo"}
                 </a>
                 {")"}
               </div>
-      </div>
+            </div>
+          </div>
+        </div>
+        <Card>
+          <CardContent className="mt-5 h-[210px] max-w-[430px] sm:min-w-[430px] flex items-center justify-center">
             <Content />
           </CardContent>
         </Card>
-
       </div>
     </main>
   );
